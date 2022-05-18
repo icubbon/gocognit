@@ -337,7 +337,7 @@ func (v *complexityVisitor) incIfComplexity(n *ast.IfStmt) {
 func (v *complexityVisitor) visitDeferStmt(n *ast.DeferStmt) ast.Visitor {
 	v.incNesting()
 	ast.Walk(v, n.Call.Fun)
-	v.incNesting()
+	v.decNesting()
 	return v
 }
 
